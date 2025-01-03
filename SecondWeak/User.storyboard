@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uj1-Yb-E6v">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23094"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" rowHeight="136" id="HTN-cy-OXu" customClass="UserTableViewCell" customModule="SecondWeak" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="136" id="HTN-cy-OXu" customClass="UserTableViewCell" customModule="SecondWeak" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="136"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HTN-cy-OXu" id="vA9-ZN-ijE">
@@ -29,6 +29,16 @@
                                                 <constraint firstAttribute="width" secondItem="YUu-cV-gZD" secondAttribute="height" multiplier="1:1" id="N9t-0M-qUX"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9m-Ez-dlr">
+                                            <rect key="frame" x="16" y="8" width="40" height="40"/>
+                                            <color key="backgroundColor" red="0.26894614189999999" green="0.44833011" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="eNn-n1-kTl"/>
+                                                <constraint firstAttribute="height" constant="40" id="nxW-64-Tf0"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="document.on.clipboard" catalog="system"/>
+                                        </button>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BM2-cY-3sZ">
                                             <rect key="frame" x="152" y="43.666666666666671" width="225" height="48.666666666666671"/>
                                             <subviews>
@@ -49,6 +59,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="YUu-cV-gZD" firstAttribute="leading" secondItem="vA9-ZN-ijE" secondAttribute="leading" constant="16" id="FIE-ZJ-OWe"/>
+                                        <constraint firstItem="A9m-Ez-dlr" firstAttribute="leading" secondItem="YUu-cV-gZD" secondAttribute="leading" id="PDQ-0q-Wc0"/>
+                                        <constraint firstItem="A9m-Ez-dlr" firstAttribute="top" secondItem="YUu-cV-gZD" secondAttribute="top" id="Th7-Al-aRR"/>
                                         <constraint firstAttribute="trailing" secondItem="BM2-cY-3sZ" secondAttribute="trailing" constant="16" id="cHR-Qs-1Fp"/>
                                         <constraint firstItem="YUu-cV-gZD" firstAttribute="top" secondItem="vA9-ZN-ijE" secondAttribute="top" constant="8" id="d4k-TF-KM8"/>
                                         <constraint firstItem="BM2-cY-3sZ" firstAttribute="leading" secondItem="YUu-cV-gZD" secondAttribute="trailing" constant="16" id="dFM-kW-Ok4"/>
@@ -57,6 +69,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="likeButton" destination="A9m-Ez-dlr" id="zYQ-Oz-zsu"/>
                                     <outlet property="messageLabel" destination="LPa-AK-0cb" id="vRL-Xz-psS"/>
                                     <outlet property="nameLabel" destination="YBa-0e-CEy" id="jrP-PS-2yn"/>
                                     <outlet property="profileImageView" destination="YUu-cV-gZD" id="g1y-ow-oMQ"/>
@@ -75,6 +88,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="document.on.clipboard" catalog="system" width="116" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

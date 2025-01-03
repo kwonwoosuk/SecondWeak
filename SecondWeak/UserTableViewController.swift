@@ -6,31 +6,75 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserTableViewController: UITableViewController {
     
-    let name = ["고래밥", "칙촉", "카스타드"]
+    var friends = FriendsInfo().list
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
        
     }
+    
+    @objc func likeButtonTapped(_ sender: UIButton) {
+        print(#function, sender.tag)
+        print(friends[sender.tag])
+        friends[sender.tag].like.toggle()
+        tableView.reloadData()
+        print(friends[sender.tag])
+    }
+    
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        name.count
+        friends.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for:     indexPath) as! UserTableViewCell
-        // 새로운 로직에서 만든 타입으로 바꿔줌( 커스텀 셀이니께 )
-        cell.profileImageView.backgroundColor = .brown
-        cell.nameLabel.text = name[indexPath.row]
-        cell.messageLabel.text = "상태메세지"
+        //        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+        //        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell") as! UserTableViewCell
+        let row = friends[indexPath.row]
+        let image = row.profile_image
         
-        cell.nameLabel.font = .boldSystemFont(ofSize: 30)
-        cell.messageLabel.font = .boldSystemFont(ofSize: 15)
+        if let image {
+            let url = URL(string: image)
+            cell.profileImageView.kf.setImage(with: url)
+        } else {
+            cell.profileImageView.image = UIImage(systemName: "person")
+        }
+        
+        let name = row.like ? "heart.fill" : "heart"
+        cell.likeButton.setImage(UIImage(systemName: name), for: .normal)
+        // 버튼을 구분짓기 위해서 tag를 분류
+        cell.likeButton.tag = indexPath.row
+        // IBAction 대신 코드로 연결
+        // Function Types
+        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        
+        //        if row.like {
+        //            cell.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        //        } else {
+        //            cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        //        }
+        
+        
+        
+        cell.nameLabel.text = row.name
+        cell.messageLabel.text = row.message
+        
+        cell.nameLabel.font = .boldSystemFont(ofSize: 15)
+        cell.messageLabel.font = .systemFont(ofSize: 13)
         
         return cell
+        
+        
+        
+        
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

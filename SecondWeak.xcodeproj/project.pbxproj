@@ -13,7 +13,7 @@
 
 /* Begin PBXFileReference section */
 		4D0902832D26EA1100663B8A /* SecondWeak.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SecondWeak.xcodeproj; sourceTree = SOURCE_ROOT; };
-		4DF072D22D22579F00C05926 /* SecondWeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondWeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF072D22D22579F00C05926 /* SecondWeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = SecondWeak.app; path = "/Users/kwonwoosuk/Desktop/새싹/App/SecondWeak/build/Debug-iphoneos/SecondWeak.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,26 +50,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D0902B12D26F5CE00663B8A /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
 		4DF072C92D22579F00C05926 = {
 			isa = PBXGroup;
 			children = (
 				4D0902832D26EA1100663B8A /* SecondWeak.xcodeproj */,
 				4DF072D42D22579F00C05926 /* SecondWeak */,
-				4DF072D32D22579F00C05926 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		4DF072D32D22579F00C05926 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4DF072D22D22579F00C05926 /* SecondWeak.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,14 +114,8 @@
 				4DC154412D27A84C00F871F3 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 4DF072D32D22579F00C05926 /* Products */;
+			productRefGroup = 4DF072C92D22579F00C05926;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4D0902B12D26F5CE00663B8A /* Products */;
-					ProjectRef = 4D0902832D26EA1100663B8A /* SecondWeak.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				4DF072D12D22579F00C05926 /* SecondWeak */,
