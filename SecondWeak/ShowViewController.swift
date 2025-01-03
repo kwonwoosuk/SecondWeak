@@ -15,7 +15,7 @@ class ShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
         view.backgroundColor = colorList.randomElement()!
         print(self, #function)
     }
