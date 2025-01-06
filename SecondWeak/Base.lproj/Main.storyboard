@@ -480,21 +480,55 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" textLabel="XiW-0Y-vZr" style="IBUITableViewCellStyleDefault" id="DQe-6t-V6v">
-                                <rect key="frame" x="0.0" y="138" width="393" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" id="DQe-6t-V6v">
+                                <rect key="frame" x="0.0" y="138" width="393" height="46.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DQe-6t-V6v" id="diG-ww-Ryb">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="46.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XiW-0Y-vZr">
-                                            <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRC-8g-r43">
+                                            <rect key="frame" x="16" y="7.9999999999999982" width="30" height="30.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="Ci7-bi-EYy"/>
+                                                <constraint firstAttribute="height" constant="30" id="EQb-GP-e2s"/>
+                                            </constraints>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="checkmark.square" catalog="system"/>
+                                            <state key="highlighted" image="checkmark.square.fill" catalog="system">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXv-Ge-vr2">
+                                            <rect key="frame" x="347" y="7.9999999999999982" width="30" height="30.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="MfO-lG-ebC"/>
+                                                <constraint firstAttribute="height" constant="30" id="XsJ-bE-GS9"/>
+                                            </constraints>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="star" catalog="system"/>
+                                            <state key="highlighted" image="star.fill" catalog="system"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27s-nQ-zPj">
+                                            <rect key="frame" x="62" y="12.666666666666664" width="269" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="bXv-Ge-vr2" secondAttribute="bottom" constant="8" id="04f-3g-aFa"/>
+                                        <constraint firstAttribute="trailing" secondItem="bXv-Ge-vr2" secondAttribute="trailing" constant="16" id="DDg-Wl-XSB"/>
+                                        <constraint firstItem="27s-nQ-zPj" firstAttribute="centerY" secondItem="diG-ww-Ryb" secondAttribute="centerY" id="KVt-dd-fm0"/>
+                                        <constraint firstItem="27s-nQ-zPj" firstAttribute="leading" secondItem="vRC-8g-r43" secondAttribute="trailing" constant="16" id="YUe-Qm-ZK8"/>
+                                        <constraint firstItem="bXv-Ge-vr2" firstAttribute="leading" secondItem="27s-nQ-zPj" secondAttribute="trailing" constant="16" id="fcI-nV-GOr"/>
+                                        <constraint firstItem="bXv-Ge-vr2" firstAttribute="top" secondItem="diG-ww-Ryb" secondAttribute="top" constant="8" id="hrG-Xa-VAh"/>
+                                        <constraint firstItem="vRC-8g-r43" firstAttribute="top" secondItem="diG-ww-Ryb" secondAttribute="top" constant="8" id="l2I-3K-GzL"/>
+                                        <constraint firstAttribute="bottom" secondItem="vRC-8g-r43" secondAttribute="bottom" constant="8" id="mR1-3G-UTv"/>
+                                        <constraint firstItem="vRC-8g-r43" firstAttribute="leading" secondItem="diG-ww-Ryb" secondAttribute="leading" constant="16" id="wre-Ga-RDt"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -668,24 +702,28 @@
     </scenes>
     <resources>
         <image name="bed.double.fill" catalog="system" width="128" height="82"/>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="iphone.gen2" catalog="system" width="112" height="128"/>
         <image name="moon.fill" catalog="system" width="128" height="125"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="117" height="128"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

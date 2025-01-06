@@ -31,7 +31,7 @@
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9m-Ez-dlr">
                                             <rect key="frame" x="16" y="8" width="40" height="40"/>
-                                            <color key="backgroundColor" red="0.26894614189999999" green="0.44833011" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="eNn-n1-kTl"/>
                                                 <constraint firstAttribute="height" constant="40" id="nxW-64-Tf0"/>
@@ -84,13 +84,16 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Nv-LF-shs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12.977099236641221" y="81.690140845070431"/>
+            <point key="canvasLocation" x="10" y="87"/>
         </scene>
     </scenes>
     <resources>
         <image name="document.on.clipboard" catalog="system" width="116" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
