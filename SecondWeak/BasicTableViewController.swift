@@ -10,7 +10,7 @@ import UIKit
 class BasicTableViewController: UITableViewController {
 
     
-    var list = ["프로젝트", "메인업무", "새싹과제"] {
+    var list = ["프로젝트", "메인업무", "새싹과제새싹과제새싹과제새싹과제새싹과제새싹과제","프로젝트", "메인업무", "새싹과제","프로젝트", "메인업무", "새싹과제","프로젝트", "메인업무", "새싹과제","프로젝트", "메인업무", "새싹과제","프로젝트", "메인업무", "새싹과제","프로젝트", "메인업무", "새싹과제"] {
         didSet{ //프로퍼티가 달라질때 // 속성감시자
             tableView.reloadData()
         }
@@ -23,7 +23,7 @@ class BasicTableViewController: UITableViewController {
         
         //var monster = Monster() // 초기화를 한다 == 인스턴스
         
-        tableView.rowHeight = 80 // 셀의 높이가 고정일때는 프로퍼티로 사용해도 되지만 셀마다 달라야할때는 메서드를 이용한다 메서드안에서 조건분기
+        tableView.rowHeight = UITableView.automaticDimension // 셀의 높이가 고정일때는 프로퍼티로 사용해도 되지만 셀마다 달라야할때는 메서드를 이용한다 메서드안에서 조건분기
         
         
     }
@@ -60,12 +60,12 @@ class BasicTableViewController: UITableViewController {
         
     }
     
-    // 3. 셀의 높이 heightForRowAt
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print(#function)
-        return 80
-    }
-    
+    // 3. 셀의 높이 heightForRowAt ‼️ 오토디메션 안먹음 ^^
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        print(#function)
+//        return 80
+//    }
+//    
     // 2. 셀 디자인 및 데이터 처리 cellForRowAt
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "jackCell")!
@@ -94,6 +94,7 @@ class BasicTableViewController: UITableViewController {
         
         
         cell.detailTextLabel?.text = "디테일 텍스트 레이블"
+        cell.textLabel?.numberOfLines = 0
         cell.detailTextLabel?.setPrimaryLabel("test")
         cell.textLabel?.textColor = .blue
         cell.textLabel?.font = .systemFont(ofSize: 30)

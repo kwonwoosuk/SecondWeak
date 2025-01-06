@@ -40,7 +40,7 @@ struct FriendsInfo {
         ),
         Friends(
             name: "최예린",
-            message: "인생은 단 한 번뿐이니까",
+            message: "인생은 단 한 번뿐이니까인생은 단 한 번뿐이니까인생은 단 한 번뿐이니까인생은 단 한 번뿐이니까",
             profile_image: nil,
             phone: 45678901,
             like: true

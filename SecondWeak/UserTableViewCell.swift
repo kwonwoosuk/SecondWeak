@@ -17,7 +17,7 @@ class UserTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var messageLabel: UILabel!
-    @IBOutlet private weak var likeButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
     
         // MARK: - 절대 안바뀔 셀 디자인
     override func awakeFromNib() { //  약간이라도 리소스를 아낄수 있다 !
@@ -25,6 +25,12 @@ class UserTableViewCell: UITableViewCell {
         print(#function)
         configure() // 절대 안바뀔 셀 디자인을 여기에 !
             
+        
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        print(#function)
+        profileImageView.image = UIImage(systemName: "person")
         
     }
     
@@ -47,10 +53,11 @@ class UserTableViewCell: UITableViewCell {
             let url = URL(string: image)
             profileImageView.kf.setImage(with: url)
             
-        } else {
-            profileImageView.image = UIImage(systemName: "person")
         }
-        
+//        else {
+//            profileImageView.image = UIImage(systemName: "person")
+//        }
+//        
         let name = row.like ? "heart.fill" : "heart"
         let btn = UIImage(systemName: name)
         likeButton.setImage(btn, for: .normal)
