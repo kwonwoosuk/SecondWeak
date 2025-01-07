@@ -42,13 +42,16 @@ class UserTableViewController: UITableViewController {
     //    - 셀 디자인 및 데이터 처리
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell") as! UserTableViewCell
+        // UserTableViewCell의 인스턴스 만드는 작업
+        let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier) as! UserTableViewCell // UserTableViewCell identifier 로 리터럴한 문자에서 타입 프로퍼티 사용 //1월 6일 내용‼️
         let row = friends[indexPath.row]
+        
+        
         
         cell.configureData(row: row)
         //cell.configure()
 //         버튼을 구분짓기 위해서 tag를 분류
+        
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         
@@ -57,7 +60,7 @@ class UserTableViewController: UITableViewController {
     
     //    - 셀 높이
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        return UITableView.automaticDimension
     }
 
     

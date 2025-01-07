@@ -13,6 +13,12 @@ struct Friends {
     let profile_image: String?
     let phone: Int?
     var like: Bool
+    // 연산 프로퍼티 //1월 6일 내용‼️
+    var nameDescription: String { // 메모리공간을 차지하지는 않는다 사용시에 사용한곳에서 사용
+        get{
+            return "이름\(name), \(message?.count ?? 0)글자 생성"
+        }
+    }
 }
 
 struct FriendsInfo {

@@ -12,7 +12,7 @@ import Kingfisher
 //   |  *
 // UserTableViewCell
 class UserTableViewCell: UITableViewCell {
-
+    static let identifier = "UserTableViewCell" //1월 6일 내용
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet private weak var nameLabel: UILabel!
@@ -24,9 +24,11 @@ class UserTableViewCell: UITableViewCell {
         super.awakeFromNib()  // 잘 기억해두기 !! 시간 지나면 다들 까먹음
         print(#function)
         configure() // 절대 안바뀔 셀 디자인을 여기에 !
-            
-        
     }
+//    override class func awakeFromNib() {
+//        <#code#>
+//    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         print(#function)
@@ -38,12 +40,13 @@ class UserTableViewCell: UITableViewCell {
         profileImageView.backgroundColor = .brown
         nameLabel.font = .boldSystemFont(ofSize: 15)
         messageLabel.font = .systemFont(ofSize: 13)
+        messageLabel.numberOfLines = 0
     }
     
     func configureData(row: Friends) {
         print(#function)
        
-        nameLabel.text = row.name
+        nameLabel.text = row.nameDescription
         messageLabel.text = row.message
         
         let image = row.profile_image
